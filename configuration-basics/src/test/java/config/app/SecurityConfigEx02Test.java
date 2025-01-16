@@ -1,5 +1,6 @@
-package config.web;
+package config.app;
 
+import config.WebConfig;
 import jakarta.servlet.Filter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,9 +14,9 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations={"classpath:config/WebConfig.xml", "classpath:config/web/SecurityConfigEx01.xml"})
+@ContextConfiguration(classes={WebConfig.class})
 @WebAppConfiguration
-public class SecurityConfigEx01Test {
+public class SecurityConfigEx02Test {
     private MockMvc mvc;
     private FilterChainProxy filterChainProxy;
 
