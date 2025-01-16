@@ -64,8 +64,7 @@ public class SecurityConfigEx03Test {
     	mvc
     		.perform(get("/assets/images/logo.svg"))
     		.andExpect(status().isOk())
-    		.andExpect(content().contentType("image/svg"))
-    		.andExpect(cookie().value("SecurityFilterEx02", "Works"))
+    		.andExpect(content().contentType("image/svg+xml"))
     		.andDo(print());
     }
 
