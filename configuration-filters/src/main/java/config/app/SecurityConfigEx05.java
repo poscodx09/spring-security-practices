@@ -34,9 +34,9 @@ public class SecurityConfigEx05 {
         	.authorizeHttpRequests((authorizeRequests) -> {
         		/* ACL */
         		authorizeRequests
-        			.requestMatchers(new RegexRequestMatcher("^/board/(write|delete|modify|reply)?id= $", null))
-        			.anyRequest().permitAll()
-        			.authenticated();
+        			.requestMatchers(new RegexRequestMatcher("^/board/?(write|delete|modify|reply).*$", null))
+        			.authenticated()
+        			.anyRequest().permitAll();
         	});
     	return http.build();
     }
